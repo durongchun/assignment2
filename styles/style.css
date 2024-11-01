@@ -23,3 +23,13 @@ header {
     height: 80px;
     width: 100%;
 }
+
+#game-start,
+#game-run,
+#play-again {
+    margin-left: 1rem;
+}
+
+.text-left {
+    margin: 2rem;
+}
