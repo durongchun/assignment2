@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
+
+<body>
+    <div class="container rounded bg-dark text-white mt-5 p-0">
+        <header class=" rounded">
+            <h3 class="d-flex justify-content-center">Assignment 02 - Pink</h3>
+            <div class="header-btn d-flex justify-content-end gap-3 me-3">
+                <button type="button" class="btn btn-danger d-none" id="quit-butt-header">Quit</button>
+                <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#myModal"
+                    id="help">Help</button>
+            </div>
+        </header>
+        <!-- The Modal -->
+        <div class="modal text-black" id="myModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">Setup Instructions</h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <p> Choose # of players, enter name(s), select mode, click play.</p>
+                    </div>
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-info" data-bs-dismiss="modal" id="more-info">More
+                            info</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="modal text-black" id="myModal2">
+            <div class="modal-dialog">
+                <div class="modal-content">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">Gameplay Instructions</h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <p> Use the spacebar to make R202 jump</br>
+                            Avoid obstracles.</br>
+                            Find Obi-wan.</br>
+                            Save the galaxy.</br>
+                        </p>
+                    </div>
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <main>
+            <section id="game-start">
+                <h3>Splash</h3>
+                <p>Given enough time, I can meet any software deadline. DRY up your code. Debugging is like being the
+                    detective in a crime movie where you ar also the murderer. Programming is really fun. debuggging is
+                    like being the detactive in a crime movie where you are also the murder. Why do it by hand in ten
+                    minutes when you can automate it in ten hours? Real Programmers use C since it's the easiest
+                    language to spell.
+                </p>
+                <div id="start-game">
+                    <button class="btn btn-success">Start Game</button>
+                </div>
+            </section>
+            <section class="d-none" id="game-run">
+                <h3>Game</h3>
+                <P>A programmer puts two glasses on this bedside table before going to sleep. A full one, in case he
+                    gets thirsty, and an empty one, in case he doesn't.</P>
+
+                <div>
+                    <button class="btn btn-success">
+                        <i class="bi bi-play-circle-fill" id="playicon"></i>
+                        <i class="bi bi-pause-circle d-none" id="pauseicon"></i>
+                    </button>
+
+                    <button class="btn btn-warning" id="end-game">End Game</button>
+                </div>
+            </section>
+            <section class="d-none" id="play-again">
+                <h3>Game Over</h3>
+                <p>Programmer, n. Device for converting caffeine into software. C is dead. Programming is really fun.
+                    DRY up your code. How many Javascript frameworks are there? //Below here there be dragons.</p>
+                <div>
+                    <button class="btn btn-success" id="play-again-butt">Play Again!</button>
+                    <button class="btn btn-danger" id="quit">Quit</button>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="./scripts/script.js"></script>
+</body>
+
+</html>

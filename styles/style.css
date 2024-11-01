@@ -1,0 +1,25 @@
+@charset "utf-8";
+
+/* Box Sizing Reset */
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+    margin: 0;
+    /* Reset margin */
+    padding: 0;
+    /* Reset padding */
+}
+
+.container {
+    display: grid;
+    grid-template-rows: 1fr 10fr;
+    height: 700px;
+    width: 800px;
+}
+
+header {
+    background-color: blueviolet;
+    height: 80px;
+    width: 100%;
+}
