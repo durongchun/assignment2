@@ -12,29 +12,26 @@ const game = {
   playIcon: $("#playicon"),
   pauseIcon: $("#pauseicon"),
   gameRunScreen: $("#game-run"),
-  gameStratScreen: $("#game-start"), //splash screen
+  gameStartScreen: $("#game-start"), //splash screen
   playAgainScreen: $("#play-again"),
   myModal: $("#myModal"),
   myModal2: $("#myModal2"),
 
   switchDisplayedScreen(screen) {
-    if (screen.is(this.gameStratScreen)) {
+    if (screen.is(this.gameStartScreen)) {
       console.log("This splash screen");
       this.startGameButt.off("click").on("click", () => {
         console.log("Game is running!");
         this.isRunning = true;
         this.currentScreen = this.gameRunScreen;
         this.gameRunScreen.removeClass("d-none");
-        this.gameStratScreen.addClass("d-none");
+        this.gameStartScreen.addClass("d-none");
         this.quitButtHeader.removeClass("d-none");
         this.helpButt.removeClass("d-none");
         console.log("isRunning:", this.isRunning);
         console.log("currentScreen:", this.currentScreen[0]);
-        if (this.isRunning && this.currentScreen === this.gameRunScreen) {
+        if (this.isGameRunning()) {
           this.gameRun();
-          if (this.wasRunning && this.currentScreen.is(this.playAgainScreen)) {
-            this.playAgain();
-          }
         }
       });
     }
@@ -54,7 +51,7 @@ const game = {
     });
 
     this.quitButtHeader.off("click").on("click", () => {
-      this.gameStratScreen.removeClass("d-none");
+      this.gameStartScreen.removeClass("d-none");
       this.playAgainScreen.addClass("d-none");
       this.gameRunScreen.addClass("d-none");
       this.quitButtHeader.addClass("d-none");
@@ -70,13 +67,15 @@ const game = {
       this.helpButt.addClass("d-none");
       this.wasRunning = true;
       this.currentScreen = this.playAgainScreen;
-      this.playAgain();
+      if (this.wasGameRunning) {
+        this.playAgain();
+      }
     });
   },
 
   playAgain() {
     this.quitButt.off("click").on("click", () => {
-      this.gameStratScreen.removeClass("d-none");
+      this.gameStartScreen.removeClass("d-none");
       this.playAgainScreen.addClass("d-none");
       this.quitButtHeader.addClass("d-none");
       this.playIcon.removeClass("d-none");
@@ -119,6 +118,14 @@ const game = {
       myModal2.show();
       myModal.hide();
     });
+  },
+
+  isGameRunning() {
+    return this.isRunning && this.currentScreen.is(this.gameRunScreen);
+  },
+
+  wasGameRunning() {
+    return this.wasRunning && this.currentScreen.is(this.playAgainScreen);
   },
 };
 
